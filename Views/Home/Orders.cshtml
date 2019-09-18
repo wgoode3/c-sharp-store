@@ -1,0 +1,17 @@
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Seller</th>
+    </tr>
+    @foreach(var order in ViewBag.Orders)
+    {
+        <tr>
+            <td>@order.Item.Name</td>
+            <td>@order.Item.Price</td>
+            <td>@order.Item.Seller.FirstName @order.Item.Seller.LastName</td>
+        </tr>
+    }
+</table>
+
+<a href="/market">Go Back</a>

@@ -1,0 +1,19 @@
+<table class="table">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+    </tr>
+    @foreach(var product in ViewBag.Products)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+        </tr>
+    }
+</table>
+
+<h3>Your total is...</h3>
+<p>$@ViewBag.Total</p>
+
+<a href="/clearcart" class="btn btn-danger">Clear Cart</a>
+<a href="/buy" class="btn btn-success">Buy Things</a>

@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Market";
+}
+
+<div class="jumbotron">
+    <h1>EasyBay - Market</h1>
+</div>
+
+<a href="/product/new" class="btn btn-success">Sell a product</a>
+<a href="/checkout" class="btn btn-primary">Cart (@ViewBag.CartSize)</a>
+<a href="/orders" class="btn btn-info">View My Orders</a>
+<a href="/logout" class="btn btn-danger">Logout</a>
+
+<div class="row">
+    @foreach(var product in ViewBag.Products)
+    {
+        <div class="col-sm-4 well">
+            <h3>@product.Name</h3>
+            <h3>$@product.Price</h3>
+            <p>Seller: @product.Seller.FirstName @product.Seller.LastName</p>
+            <p>@product.Manufacturer</p>
+            <a href="/addtocart/@product.ProductId" class="btn btn-warning">Add to Cart</a>
+        </div>
+    }
+</div>
